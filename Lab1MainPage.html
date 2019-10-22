@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html" >
+    <head>
+        <meta charset="utf-8">
+        <title>Лабораторная работа №1</title>
+        <style>
+            body{
+                /*background-image: url("shrekich.jpg");*/
+                background-size: 1460px;
+                font-family: monospace;
+
+            }
+            #div_image{
+                position: absolute;
+                right:10px;
+                top: 10px;
+            }
+            h3{
+                text-align: center;
+            }
+            .message{
+                color: black;
+                text-align: center;
+                font-family: monospace;
+                border: 2px solid black;
+                border-radius: 25px;
+                background: rgba(250, 235, 215,0.7);
+                margin-right:900px;
+            }
+            .selection_title{
+                border:2px solid black;
+                 height:517px;
+                border-radius: 25px;
+                color: black;
+                position: absolute;
+                left: 20px;
+                bottom: 20px;
+                background: rgba(250, 235, 215,0.7);
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .hatLabInfo{
+                font-size: xx-large;
+
+            }
+            ::placeholder{
+                color:red;
+                font-size: 1.5em;
+            }
+            .hatStudentInfo{
+                font-size: x-large;
+
+            }
+            h1{
+                font-size: x-large;
+                color: red;
+            }
+            .message:hover{
+                background-image:url("osel.jpg");
+                background-repeat: no-repeat;
+                background-size: 800px;
+                background-position: bottom;
+                background-position-y: -80px;
+            }
+            #submit_result{
+                position: absolute;
+                left:60px;
+                bottom:3px;
+                font-size: large;
+            }
+
+            #resultX{
+                position: absolute;
+                top:338px;
+
+            }
+            #resultR{
+                position: absolute;
+                bottom:86px;
+            }
+            #resultY{
+                position: absolute;
+                top:480px;
+            }
+            p{
+                font-size: 15px;
+                color: red;
+                font-family: monospace;
+                border:2px solid black;
+                border-radius: 25px;
+                background: rgba(250, 235, 215,0.7);
+                padding-left: 5px;
+                padding-right: 5px;
+                left:240px;
+                height: 20px;
+                width: auto;
+            }
+            h5{
+                position: absolute;
+                bottom:90px;
+                left:74px;
+            }
+            #result_button{
+                font-size:12px;
+                position: absolute;
+                left: 70px;
+                bottom:88px;
+            }
+
+            #text_select{
+               font-size: 12px;
+            }
+            #submit_result{
+                position: absolute;
+                left:55px;
+                bottom:0px;
+            }
+            #result{
+                border:2px solid black;
+                border-radius: 25px;
+                position: absolute;
+                height: 200px;
+                width: 35%;
+                bottom:200px;
+                right:20px;
+                overflow: auto;
+                text-align: center;
+                background: rgba(250, 235, 215,0.7);
+            }
+
+        </style>
+        <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    </head>
+    <body id="body" background="shrekich.jpg">
+        <h3 class="message">
+           <div class="hatLabInfo">Лабораторная работа №1 по дисциплине <br/> "Веб-программирование"
+               <br/>Вариант: 210015</br></div>
+            <div class ="hatStudentInfo"></br>Выполнил: Почикалин Владислав<br/>
+            Группа:P3210<br/>
+            Преподаватель: Яркеев А.С</div>
+        </h3>
+        <div id="div_image">
+            <img id="img" src="lab1.png" height="200px" border="2px solid black" >
+        </div>
+        <div class="selection_title">
+            <h1 style="text-align: center; font-size: xx-large;color: black ">Поля ввода</h1>
+            <h3>Введите значение X<br/>(от -5 до 3):</h3>
+            <form  id="form" name="form" class="form" >
+                <input type="text" value="Введите ваше значение" name="text_select" id="text_select" size="30px" maxlength="7"/>
+            <hr/>
+            <h3>Выберите значение Y:</h3>
+                <label for="checkboxY1"></label>  <input type="checkbox" name="checkboxY1"  id ="checkboxY1" value="-5" >-5<br/>
+                <label for="checkboxY2"></label><input type="checkbox" name="checkboxY2" id ="checkboxY2"  value="-4">-4<br/>
+                <label for="checkboxY3"></label><input type="checkbox" name="checkboxY3" id ="checkboxY3" value="-3">-3<br/>
+                <label for="checkboxY4"></label><input type="checkbox" name="checkboxY4"  id ="checkboxY4" value="-2">-2<br/>
+                <label for="checkboxY5"></label><input type="checkbox" name="checkboxY5" id ="checkboxY5" value="-1">-1<br/>
+                <label for="checkboxY6"></label> <input type="checkbox" name="checkboxY6" id ="checkboxY6"  value="0"> 0<br/>
+                <label for="checkboxY7"></label> <input type="checkbox" name="checkboxY7" id ="checkboxY7"  value="1"> 1<br/>
+                <label for="checkboxY8"></label><input type="checkbox" name="checkboxY8" id ="checkboxY8"  value="2"> 2<br/>
+                <label for="checkboxY9"></label><input type="checkbox" name="checkboxY9" id ="checkboxY9"  value="3"> 3<br/>
+            <hr/>
+            <h3>Выберите значение R:</h3>
+                <label for="buttonR1"></label><input type="button" id="buttonR1" name="buttonR1" value="1" /><br/>
+                <label for="buttonR2"></label><input type="button" id="buttonR2" name="buttonR2" value="2" /><br/>
+                <label for="buttonR3"></label><input type="button" id="buttonR3" name="buttonR3" value="3" /><br/>
+                <label for="buttonR4"></label><input type="button" id="buttonR4" name="buttonR4" value="4" /><br/>
+                <label for="buttonR5"></label><input type="button" id="buttonR5" name="buttonR5" value="5" />
+                <h5>Выбранное значение</h5>
+             <input value="Ваше выбранное значение:" type="text" id="result_button" name="result_button" disabled/><br/>
+            <hr/>
+                <button  type="submit"  id="submit_result">Отправить</button>
+        </form>
+    </div>
+        <div>
+            <p id="resultX" hidden>Введите Х!</p>
+            <p id="resultY" hidden>Выберите Y!</p>
+            <p id="resultR" hidden>Выберите R!</p>
+        </div>
+            <div id="result" hidden >
+
+            </div>
+
+    <script type="text/javascript">
+            for (let i = 1; i <= 5; i++) {
+                $('#buttonR' + i).click(function () {
+                    $('#result_button').val($('#buttonR' + i).val());
+                });
+            }
+        $('#text_select').focus(function () {
+            $('#text_select').val("");
+            $('#text_select').blur(function () {
+            if( $('#text_select').val()===""){
+                $('#text_select').val("Введите ваше значениe");
+            }
+            });
+        });
+
+        function check() {
+            let check = true;
+
+            let checkX = document.forms['form'].elements['text_select'].value.trim();
+            if(checkX==="Введите ваше значение"){
+              document.getElementById("resultX").hidden=false;
+               check=false;
+            }else{
+                if(!/^(-?\d+)([.,]\d+)?$/.test(checkX)){
+                    document.getElementById("resultX").innerHTML="Некорректный ввод X!";
+                   document.getElementById("resultX").hidden=false;
+                   check=false;
+                }else if(checkX <= -5 | checkX >= 3){
+                    document.getElementById("resultX").innerHTML="X не принадлежит ОДЗ!";
+                    document.getElementById("resultX").hidden=false;
+                    check = false;
+                }
+            }
+            let countY = 0;
+            for(let j=1;j<=9;j++){
+                if(document.getElementById("checkboxY"+j).checked){
+                    countY++;
+                }
+            }
+            if(countY === 0){
+                document.getElementById("resultY").hidden=false;
+                check=false;
+            }
+            let checkR=document.forms['form'].elements['result_button'].value.trim();
+            if(checkR==="Ваше выбранное значение:"){
+                document.getElementById("resultR").hidden=false;
+                check=false;
+            }
+            return check;
+        }
+        function goWOT(){
+            var audio = new Audio("1.mp3");
+            document.getElementById("body").setAttribute("background", "4.gif");
+            audio.play();
+            setTimeout("document.getElementById(\"body\").setAttribute(\"background\",\"shrekich.jpg\");",3000);
+        }
+        $('#form').submit(function () {
+
+            console.log("submit");
+           if(check()){
+               goWOT();
+               document.getElementById("result_button").disabled=false;
+               document.getElementById("resultR").hidden=true;
+               document.getElementById("resultX").hidden=true;
+               document.getElementById("resultY").hidden=true;
+               console.log("check is true");
+               $.get("/~s263156/PIP/LAB1/get.php",
+                   $('#form').serialize(),
+                   function (msg) {
+                   console.log("result");
+                       $('#result').html(msg);
+                       document.getElementById("result").hidden=false;
+                   }
+               );
+              document.getElementById("form").reset();
+               document.getElementById("result_button").disabled=true;
+               document.getElementById("submit_result").disabled=false;
+           }else{
+               var audio = new Audio("2.mp3");
+               document.getElementById("img").setAttribute("src","3.gif");
+               audio.play();
+               setTimeout("document.getElementById(\"img\").setAttribute(\"src\",\"lab1.png\");",10500);
+               document.getElementById("submit_result").disabled=true;
+               setTimeout("document.getElementById(\"submit_result\").disabled=false" ,11000);
+           }
+            return false;
+        })
+
+    </script>
+    </body>
+</html>
